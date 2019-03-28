@@ -19,10 +19,21 @@ public class Stock {
 	private BigDecimal dayhighPrice;
 	private BigDecimal daylowPrice;
 	
-	
+	public Stock() {
+	}
 	public Stock(String stockName) {
 		super();
 		this.stockName = stockName;
+	}
+	
+	public Stock(String stockName, BigDecimal openingPrice, BigDecimal closingPrice, BigDecimal dayhighPrice,
+			BigDecimal daylowPrice) {
+		super();
+		this.stockName = stockName;
+		this.openingPrice = openingPrice;
+		this.closingPrice = closingPrice;
+		this.dayhighPrice = dayhighPrice;
+		this.daylowPrice = daylowPrice;
 	}
 	public String getStockName() {
 		return stockName;
@@ -53,6 +64,12 @@ public class Stock {
 	}
 	public void setDaylowPrice(BigDecimal daylowPrice) {
 		this.daylowPrice = daylowPrice;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 }

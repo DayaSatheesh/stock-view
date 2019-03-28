@@ -1,4 +1,4 @@
-package com.stock.view.stocks;
+package com.stocks.view;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

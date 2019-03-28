@@ -1,5 +1,6 @@
 package com.stocks.view.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,7 +22,14 @@ public class StockServiceImpl implements StockService {
 
 	@Override
 	public List<String> getStockNames(String partialName) {
-		return null;
+		List<String> stockNames = new ArrayList<String>();
+		Iterable<Stock> stocks = stockRepository.findAll();
+		
+		stocks.forEach(stock -> {
+			if(stock.getStockName().contains(partialName))
+				stockNames.add(stock.getStockName());	
+		});
+		return stockNames;
 	}
 
 	@Override
