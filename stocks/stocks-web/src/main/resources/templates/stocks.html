@@ -3,20 +3,84 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Stock Detail</title>
+  <script type="text/javascript">
+  window.onload = function () {
+    var chart = new CanvasJS.Chart("chartContainer",
+    {
+
+      title:{
+      text: "Earthquakes - per month"
+      },
+       data: [
+      {
+        type: "line",
+
+        dataPoints: [
+        { x: new Date(2012, 00, 1), y: 450 },
+        { x: new Date(2012, 01, 1), y: 414 },
+        { x: new Date(2012, 02, 1), y: 520 },
+        { x: new Date(2012, 03, 1), y: 460 },
+        { x: new Date(2012, 04, 1), y: 450 },
+        { x: new Date(2012, 05, 1), y: 500 },
+        { x: new Date(2012, 06, 1), y: 480 },
+        { x: new Date(2012, 07, 1), y: 480 },
+        { x: new Date(2012, 08, 1), y: 410 },
+        { x: new Date(2012, 09, 1), y: 500 },
+        { x: new Date(2012, 10, 1), y: 480 },
+        { x: new Date(2012, 11, 1), y: 510 }
+        ]
+      }
+      ]
+    });
+
+    chart.render();
+  }
+  </script>
+ <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script></head>
 </head>
 <body>
-
-<table>
+<table style="width:100%">
 <tr>
-	<th>Title</th>
-</tr>
-<tr th:each="book:${stock}" >
-	<td th:text="${book.stockName}"></td>
+<td><div><img src="images/stocks_icon1.png"></div></td>
+<td style="text-align:center;font-size:30px">Welcome to stock view</td>
+</tr>	
+<tr>
+<td style="text-align:right;width:33%">Search stock:</td>
+<td style="width:auto"><input list="browsers">
+	<datalist id="browsers">
+		<option value="Internet Explorer">
+		<option value="Chrome">
+		<option value="Safari">
+		<option value="Opera">
+	</datalist>
+</td>
+<td style="text-align:left;width:33%"><img src="images/icons8-search-26.png"></td>
 </tr>
 <tr>
-	<td th:text="${stocks}"></td>
+<td>
+	<table style="border:1px solid black">
+	<tr><td>Stock Name:</td><td>Internet Explorer</td></tr>
+	<tr><td>BSE ID:</td><td>111222333</td></tr>
+	<tr><td>NSE ID:</td><td>111222333</td></tr>
+	<tr><td>Current Price:</td><td>111222333</td></tr>
+	<tr><td>Opening Price:</td><td>111222333</td></tr>
+	<tr><td>Day high:</td><td>111222333</td></tr>
+	<tr><td>Gain:</td><td>111222333</td></tr>
+	</table>
+</td>
+<td>
+	<table style="border:1px solid black">
+	<tr><td>Similar Stocks</td></tr>
+	<tr><td>Stock name</td><td>111222333</td></tr>
+	<tr><td>Current Price:</td><td>111222333</td></tr>
+	<tr><td>Gain:</td><td>111222333</td></tr>
+	</table>
+</td>
 </tr>
 </table>
-
+  <div id="chartContainer" style="height: 300px; width: 100%;">
+  </div>
 </body>
 </html>
+
+
